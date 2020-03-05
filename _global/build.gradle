@@ -24,13 +24,13 @@ android {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation "junit:junit:${dependencies_ver['junit']}"
+    androidTestImplementation "androidx.test.ext:junit:${dependencies_ver['android_junit']}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${dependencies_ver['espresso']}"
     api fileTree(dir: 'libs', include: ['*.jar'])
     api fileTree(dir: 'libs', include: ['*.aar'])
     //api project(":_global_java")
-    //api "androidx.multidex:multidex:${dependencies_ver['multidex']}"
+    api "androidx.multidex:multidex:${dependencies_ver['multidex']}"
     //api "androidx.databinding:databinding-common:${android_gradle.version}"
     //api "androidx.databinding:databinding-runtime:${android_gradle.version}"
     api "androidx.appcompat:appcompat:${dependencies_ver['appcompat']}"
@@ -64,6 +64,7 @@ dependencies {
     api "androidx.collection:collection:${dependencies_ver['collection']}"
     api "androidx.collection:collection-ktx:${dependencies_ver['collection']}"
     //api "androidx.autofill:autofill:${dependencies_ver['autofill']}"
+    //api "androidx.asynclayoutinflater:asynclayoutinflater:${dependencies_ver['asynclayoutinflater']}"
     api "androidx.documentfile:documentfile:${dependencies_ver['documentfile']}"
     api "androidx.exifinterface:exifinterface:${dependencies_ver['exifinterface']}"
     //api "androidx.heifwriter:heifwriter:${dependencies_ver['heifwriter']}"
@@ -122,19 +123,66 @@ dependencies {
     api "androidx.cardview:cardview:${dependencies_ver['cardview']}"
     api "androidx.viewpager:viewpager:${dependencies_ver['viewpager']}"
     api "androidx.viewpager2:viewpager2:${dependencies_ver['viewpager2']}"
+    api "androidx.slidingpanelayout:slidingpanelayout:${dependencies_ver['slidingpanelayout']}"
     api "androidx.swiperefreshlayout:swiperefreshlayout:${dependencies_ver['swiperefreshlayout']}"
     api "androidx.browser:browser:${dependencies_ver['browser']}"
     api "androidx.drawerlayout:drawerlayout:${dependencies_ver['drawerlayout']}"
 
-    //green dao
+    // JSON 解析 https://github.com/google/gson
+    //api "com.google.code.gson:gson:${dependencies_ver["gson"]}"
+    // 网络请求框架 https://github.com/square/okhttp
+    api "com.squareup.okhttp3:okhttp:${dependencies_ver['okhttp']}"
+    // https://github.com/square/retrofit
+    api "com.squareup.retrofit2:retrofit:${dependencies_ver["retrofit"]}"
+    api "com.squareup.retrofit2:converter-gson:${dependencies_ver['retrofit']}"
+    // GreenDao https://github.com/greenrobot/greenDAO
     if (rootProject.hasProperty('greendao_version')) {
         api "org.greenrobot:greendao:${greendao_version}"
         //对象代码类生成工具
         //api "org.greenrobot:greendao-generator:${greendao_version}"
     }
-    api 'com.trello.rxlifecycle3:rxlifecycle:3.1.0'
-    //api 'com.trello.rxlifecycle3:rxlifecycle-android:3.1.0'
-    //api 'com.trello.rxlifecycle3:rxlifecycle-kotlin:3.1.0'
-    api 'com.trello.rxlifecycle3:rxlifecycle-android-lifecycle:3.1.0'
-    api 'com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:3.1.0'
+    // EventBus https://github.com/greenrobot/EventBus
+    api "org.greenrobot:eventbus:${dependencies_ver['eventbus']}"
+    //kapt "org.greenrobot:eventbus-annotation-processor:${dependencies_ver['eventbus']}"
+    // 依赖注入 https://github.com/Kodein-Framework/Kodein-DI/
+    api "org.kodein.di:kodein-di-generic-jvm:${dependencies_ver['kodein']}"
+    api "org.kodein.di:kodein-di-framework-android-core:${dependencies_ver['kodein']}"
+    api "org.kodein.di:kodein-di-framework-android-x:${dependencies_ver['kodein']}"
+    // https://github.com/ReactiveX/RxJava/tree/2.x
+    api "io.reactivex.rxjava2:rxjava:${dependencies_ver['rxjava2']}"
+    // https://github.com/ReactiveX/RxKotlin
+    api "io.reactivex.rxjava2:rxkotlin:${dependencies_ver['rxkotlin2']}"
+    // https://github.com/ReactiveX/RxAndroid
+    api "io.reactivex.rxjava2:rxandroid:${dependencies_ver['rxandroid2']}"
+    // https://github.com/trello/RxLifecycle
+    api "com.trello.rxlifecycle3:rxlifecycle:${dependencies_ver['rxlifecycle3']}"
+    //api "com.trello.rxlifecycle3:rxlifecycle-android:${dependencies_ver['rxlifecycle3']}"
+    //api "com.trello.rxlifecycle3:rxlifecycle-kotlin:${dependencies_ver['rxlifecycle3']}"
+    api "com.trello.rxlifecycle3:rxlifecycle-android-lifecycle:${dependencies_ver['rxlifecycle3']}"
+    api "com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:${dependencies_ver['rxlifecycle3']}"
+    // URL路由 https://github.com/alibaba/ARouter
+    //api "com.alibaba:arouter-api:${dependencies_ver['arouter']}"
+    //kapt "com.alibaba:arouter-compiler:${dependencies_ver['arouter_compiler']}"
+
+    // 图片加载 https://github.com/bumptech/glide
+    api "com.github.bumptech.glide:glide:${dependencies_ver['glide']}"
+    //kapt "com.github.bumptech.glide:compiler:${dependencies_ver['glide']}"
+    // OKHttp方式加载网络图片
+    //api "com.github.bumptech.glide:okhttp3-integration:${dependencies_ver['glide']}"
+    // https://github.com/zjupure/GlideWebpDecoder
+    api "com.zlc.glide:webpdecoder:1.6.${dependencies_ver['glide_webp']}"
+    // https://github.com/airbnb/lottie-android
+    api "com.airbnb.android:lottie:${dependencies_ver['lottie']}"
+
+    // https://github.com/tbruyelle/RxPermissions
+    //api "com.tbruyelle.rxpermissions2:rxpermissions:0.9.5"
+    api "com.github.tbruyelle:rxpermissions:${dependencies_ver['rxpermissions']}"
+    // 强大的 RecyclerView 适配器 https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:${dependencies_ver['CymChad_BaseRecyclerViewAdapter']}"
+    // 刷新控件 https://github.com/Aspsine/SwipeToLoadLayout
+    api "com.github.Aspsine:SwipeToLoadLayout:${dependencies_ver['Aspsine_SwipeToLoadLayout']}"
+    // 粘性头部  https://github.com/timehop/sticky-headers-recyclerview
+    api "com.timehop.stickyheadersrecyclerview:library:${dependencies_ver['timehop_stickyheaders']}@aar"
+    // DatePick 效果的弹出选择框 https://github.com/Bigkoo/Android-PickerView
+    api "com.contrarywind:Android-PickerView:${dependencies_ver['bigkoo_pickerview']}"
 }
