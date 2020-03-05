@@ -1,0 +1,4 @@
+rootProject.name='AiSingers'
+
+include ':_global_java','_global'
+include ':app'

@@ -1,0 +1,140 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.aar'])
+    //api project(":_global_java")
+    //api "androidx.multidex:multidex:${dependencies_ver['multidex']}"
+    //api "androidx.databinding:databinding-common:${android_gradle.version}"
+    //api "androidx.databinding:databinding-runtime:${android_gradle.version}"
+    api "androidx.appcompat:appcompat:${dependencies_ver['appcompat']}"
+    api "androidx.core:core-ktx:${dependencies_ver['appcompat']}"
+    api "androidx.lifecycle:lifecycle-runtime:${dependencies_ver['lifecycle']}"
+    api "androidx.lifecycle:lifecycle-extensions:${dependencies_ver['lifecycle']}"
+    api "androidx.lifecycle:lifecycle-common-java8:${dependencies_ver['lifecycle']}"
+    api "androidx.lifecycle:lifecycle-livedata:${dependencies_ver['lifecycle']}"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:${dependencies_ver['lifecycle']}"
+    api "androidx.lifecycle:lifecycle-viewmodel:${dependencies_ver['lifecycle']}"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:${dependencies_ver['lifecycle']}"
+    //api "androidx.lifecycle:lifecycle-reactivestreams:${dependencies_ver['lifecycle']}"
+    //api "androidx.lifecycle:lifecycle-reactivestreams-ktx:${dependencies_ver['lifecycle']}"
+
+    api "androidx.paging:paging-runtime:${dependencies_ver['paging']}"
+    api "androidx.navigation:navigation-fragment:${dependencies_ver['navigation']}"
+    api "androidx.navigation:navigation-fragment-ktx:${dependencies_ver['navigation']}"
+    api "androidx.navigation:navigation-ui:${dependencies_ver['navigation']}"
+    api "androidx.navigation:navigation-ui-ktx:${dependencies_ver['navigation']}"
+    //androidTestImplementation "android.arch.navigation:navigation-testing:${dependencies_ver['navigation']}"
+    //api "androidx.room:room-runtime:${dependencies_ver['room']}"
+    //api "androidx.room:room-migration:${dependencies_ver['room']}"
+    //api "androidx.room:room-guava:${dependencies_ver['room']}"
+    //api "androidx.work:work-runtime:${dependencies_ver['work']}"
+    //api "androidx.work:work-runtime-ktx:${dependencies_ver['work']}"
+    //api "androidx.work:work-rxjava2:${dependencies_ver['work']}"
+    //api "androidx.work:work-gcm:${dependencies_ver['work']}"
+    //androidTestImplementation "androidx.work:work-testing:${dependencies_ver['work']}"
+
+
+    api "androidx.collection:collection:${dependencies_ver['collection']}"
+    api "androidx.collection:collection-ktx:${dependencies_ver['collection']}"
+    //api "androidx.autofill:autofill:${dependencies_ver['autofill']}"
+    api "androidx.documentfile:documentfile:${dependencies_ver['documentfile']}"
+    api "androidx.exifinterface:exifinterface:${dependencies_ver['exifinterface']}"
+    //api "androidx.heifwriter:heifwriter:${dependencies_ver['heifwriter']}"
+    //api "androidx.interpolator:interpolator:${dependencies_ver['interpolator']}"
+    //api "androidx.leanback:leanback:${dependencies_ver['leanback']}"
+    //api "androidx.loader:loader:${dependencies_ver['loader']}"
+    //api "androidx.localbroadcastmanager:localbroadcastmanager:${dependencies_ver['localbroadcastmanager']}"
+    //api "androidx.print:print:${dependencies_ver['print']}"
+    //api "androidx.savedstate:savedstate:${dependencies_ver['savedstate']}"
+    //api "androidx.security:security-crypto:${dependencies_ver['security']}"
+    //api "androidx.sharetarget:sharetarget:${dependencies_ver['sharetarget']}"
+    //api "androidx.sqlite:sqlite-framework:${dependencies_ver['sqlite']}"
+
+    //api "androidx.camera:camera-core:${dependencies_ver['camerax']}"
+    //api "androidx.camera:camera-camera2:${dependencies_ver['camerax']}"
+    //api "androidx.camera:camera-view:${dependencies_ver['camerax_view']}"
+    //api "androidx.camera:camera-extensions:${dependencies_ver['camerax_ext']}"
+    //api "androidx.media:media:${dependencies_ver['media']}"
+    //api "androidx.mediarouter:mediarouter:${dependencies_ver['mediarouter']}"
+    //api "androidx.media:media-widget:${dependencies_ver['media_widget']}"
+    //api "androidx.media2:media2:${dependencies_ver['media2']}"
+    //api "androidx.media2:media2-widget:${dependencies_ver['media2_widget']}"
+    //api "androidx.media2:media2-player:${dependencies_ver['media2_player']}"
+    //api "androidx.preference:preference:${dependencies_ver['preference']}"
+    //api "androidx.preference:preference-ktx:${dependencies_ver['preference']}"
+    //api "androidx.leanback:leanback-preference:${dependencies_ver['leanback_preference']}"
+    //api "androidx.slice:slice-builders:${dependencies_ver['slice']}"
+    //api "androidx.slice:slice-builders-ktx:${dependencies_ver['slice']}"
+    //api "androidx.slice:slice-view:${dependencies_ver['slice']}"
+    //api "androidx.recommendation:recommendation:${dependencies_ver['recommendation']}"
+    //api "androidx.contentpager:contentpager:${dependencies_ver['contentpager']}"
+    //api "androidx.dynamicanimation:dynamicanimation:${dependencies_ver['dynamicanimation']}"
+    //api "androidx.textclassifier:textclassifier:${dependencies_ver['textclassifier']}"
+    //api "androidx.webkit:webkit:${dependencies_ver['webkit']}"
+
+    //api "androidx.legacy:legacy-support-core-utils:${dependencies_ver['legacy']}"
+    //api "androidx.legacy:legacy-support-core-ui:${dependencies_ver['legacy']}"
+    //api "androidx.legacy:legacy-support-v4:${dependencies_ver['legacy']}"
+    //api "androidx.legacy:legacy-support-v13:${dependencies_ver['legacy']}"
+
+    //api "androidx.tvprovider:tvprovider:${dependencies_ver['tvprovider']}"
+    //api "androidx.wear:wear:${dependencies_ver['wear']}"
+    //api "androidx.car:car:${dependencies_ver['car']}"
+
+    api "com.google.android.material:material:${dependencies_ver['material']}"
+    api "androidx.emoji:emoji:${dependencies_ver['emoji']}"
+    api "androidx.palette:palette:${dependencies_ver['palette']}"
+    api "androidx.transition:transition:${dependencies_ver['transition']}"
+    api "androidx.vectordrawable:vectordrawable:${dependencies_ver['vectordrawable']}"
+    api "androidx.vectordrawable:vectordrawable-animated:${dependencies_ver['vectordrawable']}"
+    api "androidx.versionedparcelable:versionedparcelable:${dependencies_ver['versionedparcelable']}"
+    api "androidx.constraintlayout:constraintlayout:${dependencies_ver['constraintlayout']}"
+    api "androidx.coordinatorlayout:coordinatorlayout:${dependencies_ver['coordinatorlayout']}"
+    api "androidx.recyclerview:recyclerview:${dependencies_ver['recyclerview']}"
+    api "androidx.recyclerview:recyclerview-selection:${dependencies_ver['recyclerview_selection']}"
+    api "androidx.cardview:cardview:${dependencies_ver['cardview']}"
+    api "androidx.viewpager:viewpager:${dependencies_ver['viewpager']}"
+    api "androidx.viewpager2:viewpager2:${dependencies_ver['viewpager2']}"
+    api "androidx.swiperefreshlayout:swiperefreshlayout:${dependencies_ver['swiperefreshlayout']}"
+    api "androidx.browser:browser:${dependencies_ver['browser']}"
+    api "androidx.drawerlayout:drawerlayout:${dependencies_ver['drawerlayout']}"
+
+    //green dao
+    if (rootProject.hasProperty('greendao_version')) {
+        api "org.greenrobot:greendao:${greendao_version}"
+        //对象代码类生成工具
+        //api "org.greenrobot:greendao-generator:${greendao_version}"
+    }
+    api 'com.trello.rxlifecycle3:rxlifecycle:3.1.0'
+    //api 'com.trello.rxlifecycle3:rxlifecycle-android:3.1.0'
+    //api 'com.trello.rxlifecycle3:rxlifecycle-kotlin:3.1.0'
+    api 'com.trello.rxlifecycle3:rxlifecycle-android-lifecycle:3.1.0'
+    api 'com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:3.1.0'
+}
