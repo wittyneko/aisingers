@@ -23,6 +23,7 @@ allprojects {
         maven { url 'http://tutoo.vip/maven2/' }
         google()
         jcenter()
+        maven {url 'https://jitpack.io'}
 
     }
 }
