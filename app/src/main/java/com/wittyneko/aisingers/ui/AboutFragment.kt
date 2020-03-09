@@ -20,6 +20,11 @@ Android/data/com.wittyneko.aisingers/files/out
 
 更新内容
 
+0.0.3
+1. 集成浏览器可以直接登录官网
+2. APP直接上传修改后曲谱到官网
+3. 直接下载官网曲谱分享模版到APP
+
 0.0.2
 1. 内置一个模版歌曲
 2. 歌词编辑列表可删除
@@ -31,8 +36,9 @@ Android/data/com.wittyneko.aisingers/files/out
 
 
 目前仅支持中文，后续可能会加拼音
-后续版本应该会内嵌浏览器，方便打开选择上传合成，不定期更新大概获取明年吧
+主要功能都实现了，剩下的随缘更新大概获取明年吧
 
+源码：https://github.com/wittyneko/aisingers
 问题反馈群：141921984
     """.trimIndent()
 class AboutFragment : BaseFragment() {

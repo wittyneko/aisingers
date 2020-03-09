@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity(), KodeinAware {
         if (configRepository.hasInitModel) {
             copyFile("model")
             copyFile("cache")
+            copyFile("out")
             configRepository.hasInitModel = false
         }
     }
@@ -69,6 +70,9 @@ class MainActivity : AppCompatActivity(), KodeinAware {
         when (item.itemId) {
             R.id.about -> {
                 navHostFragment.navigate(R.id.aboutFragment)
+            }
+            R.id.home ->{
+                navHostFragment.navigate(R.id.webViewFragment)
             }
         }
         return super.onOptionsItemSelected(item)

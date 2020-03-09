@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.wittyneko.aisingers.BaseFragment
 import com.wittyneko.aisingers.R
 import com.wittyneko.aisingers.MainViewModule
+import com.wittyneko.aisingers.ui.webview.DownloadFiles
 import kotlinx.android.synthetic.main.fragment_list.view.*
 import org.kodein.di.Kodein
 import org.kodein.di.generic.instance
@@ -50,6 +51,10 @@ class ListFragment : BaseFragment() {
             adapter.notifyDataSetChanged()
         }
         view.btn_refresh.setOnClickListener {
+            viewModule.getList()
+            adapter.notifyDataSetChanged()
+        }
+        DownloadFiles.onFinish = {
             viewModule.getList()
             adapter.notifyDataSetChanged()
         }
