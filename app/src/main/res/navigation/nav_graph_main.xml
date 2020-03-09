@@ -15,4 +15,9 @@
         android:name="com.wittyneko.aisingers.ui.edit.EditFragment"
         android:label="fragment_message"
         tools:layout="@layout/fragment_edit" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.wittyneko.aisingers.ui.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about"/>
 </navigation>

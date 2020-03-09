@@ -42,9 +42,9 @@ class EditViewModule(
     fun read() {
         val _lines = current.readLines()
         _chars = _lines.map { it.split(' ') }
-        _chars.forEach {
-            Log.e("chars", "${it[0]}, ${it.getOrNull(1)}")
-        }
+//        _chars.forEach {
+//            Log.e("chars", "${it[0]}, ${it.getOrNull(1)}")
+//        }
     }
 
     fun save() {

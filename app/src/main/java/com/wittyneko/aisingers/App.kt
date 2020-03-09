@@ -3,6 +3,7 @@ package com.wittyneko.aisingers
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
+import com.wittyneko.aisingers.di.globalRepositoryModule
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.androidModule
@@ -17,6 +18,8 @@ class App : Application(), KodeinAware {
 
         import(androidModule(this@App))
         import(androidXModule(this@App))
+
+        import(globalRepositoryModule)
     }
 
     override fun attachBaseContext(base: Context?) {

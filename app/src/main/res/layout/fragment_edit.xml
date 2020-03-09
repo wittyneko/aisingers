@@ -21,6 +21,16 @@
         tools:layout_editor_absoluteX="74dp"
         tools:listitem="@android:layout/simple_list_item_2" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="28dp"
+        android:src="@drawable/ic_save_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/list"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/la_edt_input"
         android:layout_width="0dp"
@@ -43,6 +53,7 @@
             android:id="@+id/edt_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             tools:hint="Hint"
             tools:text="Text"/>
 
