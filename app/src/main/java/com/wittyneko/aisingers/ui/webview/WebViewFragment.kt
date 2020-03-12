@@ -118,6 +118,7 @@ class WebViewFragment : BaseFragment() {
                 val dailog = AlertDialog.Builder(requireContext())
                     .setView(recyclerView)
                     .setNegativeButton("取消") { dialog, which ->
+                        filePathCallback.onReceiveValue(null)
                     }
                     .setOnCancelListener {
                         filePathCallback.onReceiveValue(null)
